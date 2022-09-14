@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#sp2 {
+    color: gray;
+}
+
+#sp1{
+    /* margin: 100px;
+    padding: 100px; */
+    color: green;
+}
+p span{
+    color:  blue;
+    margin: 50;
+}
+
+.fuente{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+span::after{
+    content: '\A''\A' ; white-space: pre;
+}
+
+div {
+    background-color: aqua;
+    color: rebeccapurple;
+    padding: 25px;
+    text-align: center;
+}
+  
+div:hover {
+    background-color: palevioletred;
+}
+
+p::first-line {
+    color: orange;
+    font-size: xx-small;
+}
+
+h1::after {
+    content: url(https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png);
+  }
+
+ div p {
+    display: none;
+    background-color: saddlebrown;
+    padding: 100px;
+  }
+  
+  div:hover p {
+    display: block;
+  }

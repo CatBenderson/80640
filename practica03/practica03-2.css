@@ -1,0 +1,11 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.hijo{
+    background-color: aquamarine;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}

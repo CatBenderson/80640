@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+}
+
+.header{
+    background-color: gray;
+    color: white;
+    height: 25vh;
+    text-align: center;
+}
+
+.menu{
+    background-color: blue;
+    color: white;
+    height: 10vh;
+    text-align: center;
+}
+
+.contenido{
+    background-color: crimson;
+    color: white;
+    height: 55vh;
+    width: 75vw;
+    text-align: center;
+}
+
+.publicidad{
+    background-color: aqua;
+    color: white;
+    height: 55vh;
+    width: 25vw;
+    text-align: center;
+}
+
+.padre{
+    display: flex;
+    flex-direction: wrap;
+}
+
+

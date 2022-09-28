@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    background: gray;
+}
+
+.ventana{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 1em;
+    max-width: 400px;
+}
+
+.ventanaCentrada{
+    position: relative;
+    margin: calc(100vh/2.5) auto;
+}
+
+.cerrar{
+    text-decoration: none;
+    font-family: sans-serif;
+    border: 1px solid white;
+    border-radius: 90px;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.cerrar:hover{
+    background: rgba(255, 0, 0, .3);
+    visibility: hidden;
+}
+
+#cerrar:target{
+    visibility: hidden;
+}

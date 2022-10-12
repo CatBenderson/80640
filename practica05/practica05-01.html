@@ -29,6 +29,15 @@
                 c[index].style.color=color
             }
         }
+        function cambiarColores3(color) {
+            let c =document.getElementsByTagName("p")
+            for (const x in c) {
+                if (Object.hasOwnProperty.call(c, x)) {
+                    c[x].style.color="cyan"
+                }
+            }
+        } 
+        
     </script>
 </head>
 <body>
@@ -38,6 +47,6 @@
     <button onclick="cambiarColor1('blue');cambiarColor2('green') ">azul</button>
     <button onclick="cambiarColor1('red'); cambiarColor2('yellow')" >rojo</button>
     <button onclick="cambiarColores1('pink')">Colores1</button>
-    <button onclick="cambiarColores2('crimson')">Colores2</button>
+    <button onclick="cambiarColores3('crimson')">Colores2</button>
 </body>
 </html>

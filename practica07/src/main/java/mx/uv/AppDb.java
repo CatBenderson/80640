@@ -13,7 +13,7 @@ import com.google.gson.Gson;
  * Hello world!
  *
  */
-public class App {
+public class AppDb {
     public static Gson gson = new Gson();
     public static Map<String, Usuario> usuarios = new HashMap<>();
 

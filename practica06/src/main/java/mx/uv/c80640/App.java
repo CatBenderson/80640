@@ -1,7 +1,12 @@
 package mx.uv.c80640;
 import static spark.Spark.*;
 
+import org.eclipse.jetty.util.Scanner.ScanCycleListener;
+import org.omg.CORBA.WCharSeqHolder;
+
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 /**
  * Hello world!
@@ -33,12 +38,32 @@ public class App
         get("/", (req, res) -> "<h1> Bienvenido </h1><img src='https://www.adictosaltrabajo.com/wp-content/uploads/2016/12/spark-logo.png'>");
 
         post("/", (req, res) ->{
-            System.out.println(req.queryParams("email")+" "+ req.queryParams("password"));
-            System.out.println(req.body());
-            res.status(200);
+            JsonObject urlString =new JsonObject();
+            JsonParser parser = new JsonParser();
+            JsonObject peticionCliente = new JsonObject();
             JsonObject oRespuesta= new JsonObject();
+            //System.out.println(req.queryParams("email")+" "+ req.queryParams("password"));
+            //System.out.println(req.body());
+
             oRespuesta.addProperty("msj","hola");
-            oRespuesta.addProperty("email", req.queryParams("email"));
+        
+            if(req.queryParams("email")!=null){
+                
+                urlString.addProperty("email", req.queryParams("email"));
+                urlString.addProperty("email", req.queryParams("password"));
+                oRespuesta.addProperty("email", req.queryParams("email"));
+            }else{
+                
+                JsonElement arbol = parser.parse(req.body());
+                peticionCliente = arbol.getAsJsonObject();
+                oRespuesta.addProperty("email", peticionCliente.get("email").getAsString());
+            }
+ 
+            // System.out.println(peticionCliente.get("email"));
+            // System.out.println(peticionCliente.get("password"));
+            // System.out.println(parser);
+
+            res.status(200);
             return oRespuesta;
             
         });

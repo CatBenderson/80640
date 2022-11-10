@@ -21,14 +21,14 @@
         bEnviar.addEventListener("click", function(){
             let email =document.getElementById("email").value
             let pass =document.getElementById("password").value
-            axios.post("http://localhost:4567", {
-                email: email,
-                password: pass
-                })
-            // let parametros = new URLSearchParams()
-            // parametros.append("email", email)
-            // parametros.append("password", pass)
-            // axios.post("http://localhost:4567", parametros)
+            // axios.post("http://localhost:4567", {
+            //     email: email,
+            //     password: pass
+            //     })
+            let parametros = new URLSearchParams()
+            parametros.append("email", email)
+            parametros.append("password", pass)
+            axios.post("http://localhost:4567", parametros)
             .then(function(response){
                 console.log("Respuesta ", response)
                 document.getElementById("respuesta").innerHTML=response.data.msj + " "+ response.data.email

@@ -5,8 +5,6 @@ import static spark.Spark.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.jetty.client.api.Request;
-
 import com.google.gson.Gson;
 
 /**

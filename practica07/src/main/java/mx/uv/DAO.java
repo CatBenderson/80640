@@ -101,4 +101,88 @@ public class DAO {
         
         return message;
     }
+
+    public static String borraUsuario(Usuario u){
+        PreparedStatement stm =null;
+        Connection cc=null;
+        String message = "";
+
+        cc = c.getConnection();
+
+        try {
+            String sql = "DELETE FROM ejemplo80640.usuarios WHERE (id = ? );";
+            stm=cc.prepareStatement(sql);
+            stm.setString(1, u.getId());
+            
+
+            if (stm.executeUpdate()>0){
+                message = "el usuario se eliminó";
+            }else{
+                message="el usuario no se eliminó";
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }finally {
+            if (stm != null) {
+                try {
+                    stm.close();
+                } catch (SQLException sqlEx) {
+                    sqlEx.printStackTrace();
+                }
+                stm = null;
+            }
+            try {
+                cc.close();
+                System.out.println("Closed  connection!");
+            } catch (SQLException sqlEx) {
+                sqlEx.printStackTrace();
+            }
+        }
+        
+        return message;
+    }
+
+    public static String modificaUsuario(Usuario u){
+        PreparedStatement stm =null;
+        Connection cc=null;
+        String message = "";
+
+        cc = c.getConnection();
+
+        try {
+            String sql = "UPDATE ejemplo80640.usuarios SET id =?, nombre=? ,password=? WHERE (id = ?);";
+            stm=cc.prepareStatement(sql);
+            stm.setString(1, u.getId());
+            stm.setString(2, u.getNombre());
+            stm.setString(3, u.getPassword());
+            stm.setString(4, u.getId());
+
+            if (stm.executeUpdate()>0){
+                message = "el usuario se modificó";
+            }else{
+                message="el usuario no se modificó";
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }finally {
+            if (stm != null) {
+                try {
+                    stm.close();
+                } catch (SQLException sqlEx) {
+                    sqlEx.printStackTrace();
+                }
+                stm = null;
+            }
+            try {
+                cc.close();
+                System.out.println("Closed  connection!");
+            } catch (SQLException sqlEx) {
+                sqlEx.printStackTrace();
+            }
+        }
+        
+        return message;
+    }
+
+
 }

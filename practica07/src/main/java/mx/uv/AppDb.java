@@ -50,7 +50,7 @@ public class AppDb {
             Usuario u = gson.fromJson(datosFormulario, Usuario.class);
             // usuarios.put(u.getId(), u);
             // return "usuario agregado";
-            return DAO.crearUsuario(u);
+            return DAO.modificaUsuario(u);
         });
     }
 }
